@@ -47,14 +47,6 @@ class SignalFinder: public JPetTask {
 		JPetParamManager* fParamManager;
 		LargeBarrelMapping fBarrelMap;
 		void saveRawSignals(const std::vector<JPetRawSignal> & sigChVec);
-		std::map<int,std::vector<JPetSigCh>> getSigChsPMMapById(const JPetTimeWindow* timeWindow);
-		std::vector<JPetRawSignal> buildAllSignals(Int_t timeWindowIndex,
-					std::map<int,std::vector<JPetSigCh>> sigChsPMMap);
-		std::vector<JPetRawSignal> buildRawSignals(Int_t timeWindowIndex,
-					const std::vector<JPetSigCh> & sigChFromSamePM);
-		int findSigChOnNextThr(Double_t sigChValue, const std::vector<JPetSigCh> & sigChVec);
-		int findTrailingSigCh(JPetSigCh leadingSigCh,
-				      const std::vector<JPetSigCh> & trailingSigChVec);
 		const int kNumOfThresholds = 4;
 		const Float_t kSigChEdgeMaxTime = 20000; //[ps]
 		const Float_t kSigChLeadTrailMaxTime = 300000; //[ps]
